@@ -16,10 +16,10 @@ function updateCharCount() {
     const count = base64Input.value.length;
     charCount.textContent = count.toString();
     
-    if (count > 100000) {
-        showMessage('Limite de 100.000 caracteres excedido', 'error');
-        base64Input.value = base64Input.value.substring(0, 100000);
-        charCount.textContent = '100000';
+    if (count > 10000000) {
+        showMessage('Limite de 10.000.000 caracteres excedido', 'error');
+        base64Input.value = base64Input.value.substring(0, 10000000);
+        charCount.textContent = '10000000';
     }
 }
 

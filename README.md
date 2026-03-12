@@ -9,7 +9,7 @@ Um aplicativo web moderno para converter arquivos Base64 de volta ao seu formato
 - ✅ Download automático do arquivo
 - ✅ Suporta qualquer tipo de arquivo (imagens, PDFs, documentos, etc)
 - ✅ Processamento 100% no navegador (seguro e rápido)
-- ✅ Limite de 100.000 caracteres Base64
+- ✅ Limite de 10MB de texto Base64
 - ✅ Nomes de arquivo customizáveis
 - ✅ Mensagens de feedback ao usuário
 - ✅ Contador de caracteres em tempo real
@@ -95,7 +95,7 @@ Funciona em todos os navegadores modernos:
 
 ## 📦 Limitações
 
-- Limite de 100.000 caracteres Base64 (proteção contra sobrecarga)
+- Limite de 10MB de texto Base64 (~10.000.000 caracteres)
 - O navegador pode ter limitações de tamanho de download dependendo das configurações
 - Alguns navegadores podem pedir confirmação para download automático
 - O tamanho final do arquivo é aproximadamente 75% do tamanho Base64
@@ -120,7 +120,7 @@ Funciona em todos os navegadores modernos:
 - ✓ Evite: / \ : * ? " < > |
 
 ### O contador mostra limite excedido
-- ✓ O limite automático de 100.000 caracteres foi acionado
+- ✓ O limite automático de 10MB foi acionado
 - ✓ Remova parte do código Base64 ou divida em múltiplos arquivos
 
 ## ℹ️ Informações Adicionais
