@@ -1,48 +1,44 @@
 # 📄 Tradutor Base64
 
-Um aplicativo web moderno para converter arquivos Base64 de volta ao seu formato original e fazer download automaticamente no navegador.
+Um aplicativo web moderno para converter entre arquivos e Base64 de forma fácil e segura. Funciona 100% no navegador, sem enviar dados para servidores.
 
 ## ✨ Funcionalidades
 
-- ✅ Interface amigável e responsiva
-- ✅ Converte Base64 para arquivo binário
-- ✅ Download automático do arquivo
+- ✅ **Decodificar**: Base64 → Arquivo (baixar automaticamente)
+- ✅ **Codificar**: Arquivo → Base64 (copiar ou salvar)
+- ✅ Interface amigável e responsiva com abas
 - ✅ Suporta qualquer tipo de arquivo (imagens, PDFs, documentos, etc)
 - ✅ Processamento 100% no navegador (seguro e rápido)
-- ✅ Limite de 10MB de texto Base64
-- ✅ Nomes de arquivo customizáveis
-- ✅ Mensagens de feedback ao usuário
+- ✅ Limite de 10MB de arquivo
+- ✅ Drag & drop para selecionar arquivos
+- ✅ Copiar Base64 para área de transferência
 - ✅ Contador de caracteres em tempo real
 - ✅ Design moderno com gradientes e animações
 - ✅ Totalmente responsivo (funciona em mobile)
 
 ## 🚀 Como Usar
 
-1. **Abra o arquivo `index.html` no navegador**
-   - Duplo clique em `index.html` ou
-   - Clique com botão direito → Abrir com → Navegador
+### 🔽 Abas: Decodificar (Base64 → Arquivo)
 
-2. **Cole o código Base64**
-   - Copie o código Base64 de seu arquivo
-   - Cole no campo "Cole seu código Base64 aqui"
-
-3. **Defina o nome do arquivo (opcional)**
-   - Se quiser, insira o nome desejado no campo "Nome do arquivo"
-   - Exemplo: `imagem.png`, `documento.pdf`, `dados.zip`
-   - Se não informar, um nome padrão será gerado automaticamente
-
+1. **Clique na aba "Decodificar"**
+2. **Cole o código Base64** no campo de texto
+3. **(Opcional) Defina o nome do arquivo** a ser baixado
 4. **Clique em "Converter e Baixar"**
-   - O arquivo será decodificado e baixado automaticamente
-   - Você verá uma mensagem de sucesso
+5. O arquivo será decodificado e baixado automaticamente
 
-5. **Use "Limpar" para resetar os campos** (opcional)
+### 🔼 Abas: Codificar (Arquivo → Base64)
+
+1. **Clique na aba "Codificar"**
+2. **Selecione um arquivo** (clique ou arraste e solte)
+3. **Copie o Base64** para área de transferência
+4. **Ou salve como .txt** para guardar o código
 
 ## 📁 Arquivos do Projeto
 
 ```
 leitorBase64/
-├── index.html      # Página principal com a interface
-├── styles.css      # Estilos (CSS) - design responsivo
+├── index.html      # Página principal com abas (Decodificar/Codificar)
+├── styles.css      # Estilos (CSS) - design responsivo com abas
 ├── script.js       # Lógica da aplicação (JavaScript puro)
 └── README.md       # Este arquivo
 ```
@@ -55,6 +51,7 @@ leitorBase64/
 
 ## 💡 Como Funciona
 
+### Decodificar (Base64 → Arquivo)
 1. O usuário cola o código Base64 no textbox
 2. O JavaScript decodifica a string Base64 usando a função `atob()`
 3. Os caracteres são convertidos em bytes (Uint8Array)
@@ -63,6 +60,14 @@ leitorBase64/
 6. Um link de download é acionado automaticamente
 7. O navegador abre a caixa de diálogo de download
 8. A URL temporária é removida da memória
+
+### Codificar (Arquivo → Base64)
+1. O usuário seleciona um arquivo (clique ou drag & drop)
+2. O FileReader lê o arquivo como ArrayBuffer
+3. Converte para string binária
+4. Encoda usando a função `btoa()` para gerar Base64
+5. Exibe o Base64 no textbox
+6. Usuário pode copiar ou salvar como .txt
 
 ## 🔒 Segurança
 

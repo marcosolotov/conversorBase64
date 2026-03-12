@@ -10,8 +10,20 @@
     <div class="container">
         <div class="card">
             <h1>📄 Tradutor Base64</h1>
-            <p class="subtitle">Converta seu arquivo Base64 de volta ao formato original</p>
+            <p class="subtitle">Converta entre arquivo e Base64</p>
 
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" id="tabDecode">
+                    <span class="tab-icon">🔽</span> Decodificar (Base64 → Arquivo)
+                </button>
+                <button class="tab-btn" id="tabEncode">
+                    <span class="tab-icon">🔼</span> Codificar (Arquivo → Base64)
+                </button>
+            </div>
+
+            <!-- TAB 1: Decode (Base64 to File) -->
+            <div class="tab-content active" id="decodeTab">
             <div class="form-group">
                 <label for="base64Input">Cole seu código Base64 aqui:</label>
                 <textarea 
@@ -43,9 +55,54 @@
             </div>
 
             <div id="message" class="message"></div>
+            </div>
+
+            <!-- TAB 2: Encode (File to Base64) -->
+            <div class="tab-content" id="encodeTab">
+            <div class="form-group">
+                <label for="fileInput">Selecione um arquivo:</label>
+                <div class="file-drop-zone" id="fileDropZone">
+                    <input 
+                        type="file" 
+                        id="fileInput" 
+                        class="file-input"
+                        accept="*/*"
+                    >
+                    <div class="drop-zone-content">
+                        <span class="drop-icon">📁</span>
+                        <p>Arraste um arquivo aqui ou clique para selecionar</p>
+                        <small>Máximo 10MB</small>
+                    </div>
+                </div>
+                <span class="help-text" id="fileInfo"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Código Base64:</label>
+                <textarea 
+                    id="base64Output" 
+                    placeholder="O código Base64 aparecerá aqui..."
+                    class="textarea-input"
+                    readonly
+                ></textarea>
+                <span class="char-count"><span id="outputCharCount">0</span> caracteres</span>
+            </div>
+
+            <div class="button-group">
+                <button id="copyBtn" class="btn btn-primary" disabled>
+                    <span class="btn-icon">📋</span> Copiar para Área de Transferência
+                </button>
+                <button id="downloadBtn" class="btn btn-secondary" disabled>
+                    <span class="btn-icon">💾</span> Salvar como .txt
+                </button>
+            </div>
+
+            <div id="message2" class="message"></div>
+            </div>
 
             <div class="info-section">
                 <h3>💡 Como usar:</h3>
+                <div id="instructionsContent">
                 <ol>
                     <li>Cole o código Base64 no campo acima</li>
                     <li>(Opcional) Defina o nome do arquivo a ser baixado</li>
@@ -60,7 +117,9 @@
                     <li>Suporta qualquer tipo de arquivo (imagens, PDFs, arquivos de texto, etc)</li>
                     <li>Processamento acontece totalmente no navegador (seguro)</li>
                     <li>Limite de 10MB de texto Base64</li>
+                    <li>Você pode codificar e decodificar arquivos em qualquer momento</li>
                 </ul>
+                </div>
             </div>
         </div>
     </div>
